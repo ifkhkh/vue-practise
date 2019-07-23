@@ -92,11 +92,25 @@ const __main = () => {
             reportOperation: function (opName) {
                 log('operation', opName, '-----is here-----')
             },
+
             saveNote: function (noteString) {
                 let vue = this
                 saveStorage(vue.noteKey, noteString)
                 vue.reportOperation('saving')
             },
+
+            addNote: function () {
+                let vue = this
+                let time = Date.now()
+                let note = {
+                    id: String(time),
+                    title: `new title ${vue.notes.length + 1}`,
+                    content: '**Hi!** This notebook is using [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for formatting!',
+                    created: time,
+                    favorite: false,
+                }
+                vue.notes.push(note)
+            }
         }
     })
     let selector = '#notebook'
