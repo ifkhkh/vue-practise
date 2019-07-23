@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- 将库添加到这里 -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <!-- 一些 HTML 代码 -->
+    <div id="root">
+        <p>{{ duduMessage }}</p>
+        <input type="text" v-model="duduMessage">
+    </div>
+
+    <!-- 一些 JavaScript 代码 -->
+    <script>
+        console.log('Yes! We are using Vue version', Vue.version)
+
+        let selector = '#root'
+        let myData = {
+            duduMessage: '嘟嘟阿嘟嘟'
+        }
+
+        // 创建 vue 实例
+        let app = new Vue({
+            name: 'myFirstVue',
+            // 诸多参数
+            // el: selector, // 告知 Vue 将实例添加（挂载）到 Web 页面的哪个 DOM
+            data: () => myData,
+        })
+
+        app.$mount(selector) // 使用挂载函数 = el: selector
+    </script>
+
+</body>
+</html>
