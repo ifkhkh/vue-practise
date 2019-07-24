@@ -24,6 +24,7 @@ const __main = () => {
         },
 
         // 在实例准备就绪之后调用。注意，此时实例还没有挂载到 DOM 中。
+        //
         created: function () {
             let vue = this
             let note = loadStorage(vue.noteKey) || '**Start note your life!**'
@@ -110,6 +111,11 @@ const __main = () => {
                     favorite: false,
                 }
                 vue.notes.push(note)
+                log(vue.notes, '-----vue.notes is here-----')
+            },
+
+            addButtonTitle: function () {
+
             }
         }
     })

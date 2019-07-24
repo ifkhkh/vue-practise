@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Notebook</title>
     <!-- 图标和样式表 -->
-    <link href="https://fonts.googleapis.com/icon?
-  family=Material+Icons" rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <script src="https://use.fontawesome.com/d9beca69dd.js"></script>
     <link rel="stylesheet" href="style.css" />
     <!-- 在页面中包含 JavaScript 库 -->
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -19,11 +19,11 @@
         <!-- 侧边栏 -->
         <aside class="side-bar" >
             <!-- 这里将是笔记列表 -->
-            <!-- 添加笔记按钮 -->
-<!--            <button v-on:click="addNote">-->
+            <!-- 添加笔记按钮 v-on 事件, v-bind 绑定属性计算表达式-->
+<!--            <button v-on:click="addNote" v-bind:title="`${notes.length} note(s) already`">-->
 <!--            简化-->
-            <button @click="addNote">
-                <i class="material-icons">add</i> Add note
+            <button @click="addNote" :title="addButtonTitle">
+                <i class="material-icons fa fa-plus"></i> Add note
             </button>
         </aside>
 
